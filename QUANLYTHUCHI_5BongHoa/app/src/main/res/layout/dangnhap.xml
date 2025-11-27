@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backround"
+    android:background="@color/mau_chu_dao"
     tools:context="com.example.quanlythuchi_5bonghoa.dangnhap">
 
     <com.google.android.material.card.MaterialCardView

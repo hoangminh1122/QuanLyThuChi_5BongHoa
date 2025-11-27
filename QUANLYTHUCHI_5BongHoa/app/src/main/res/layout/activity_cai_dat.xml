@@ -6,30 +6,38 @@
     android:orientation="vertical"
     android:background="#E8F5F5">
 
-    <!-- Header -->
+    <!-- HEADER -->
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#5DBED6"
-        android:padding="16dp">
+        android:layout_height="56dp"
+        android:background="@color/mau_chu_dao"
+        android:elevation="4dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp">
 
+        <!-- BACK BUTTON -->
         <ImageView
             android:id="@+id/btnBack"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
             android:layout_centerVertical="true"
             android:src="@drawable/ic_arrow_back_white_24dp"
+            android:padding="4dp"
+            android:background="?selectableItemBackgroundBorderless"
             android:contentDescription="Back" />
 
+        <!-- TITLE -->
         <TextView
+            android:id="@+id/txtTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:text="CÀI ĐẶT"
             android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textSize="19sp" />
 
+        <!-- ICON BUTTON GROUP -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -37,34 +45,33 @@
             android:layout_centerVertical="true"
             android:orientation="horizontal">
 
-            <TextView
+            <!-- DISCARD ICON -->
+            <ImageView
                 android:id="@+id/btnDiscard"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_button_rounded"
-                android:backgroundTint="#B0B0B0"
-                android:padding="8dp"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:text="Discard"
-                android:textColor="#FFFFFF"
-                android:layout_marginEnd="8dp" />
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_close"
+                android:padding="6dp"
+                android:layout_marginEnd="6dp"
+                android:background="?selectableItemBackgroundBorderless"
+                app:tint="#FFFFFF"
+                android:contentDescription="Discard" />
 
-            <TextView
+            <!-- SAVE ICON -->
+            <ImageView
                 android:id="@+id/btnSave"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_button_rounded"
-                android:backgroundTint="#4CAF50"
-                android:padding="8dp"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:text="Save"
-                android:textColor="#FFFFFF" />
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_check"
+                android:padding="6dp"
+                android:background="?selectableItemBackgroundBorderless"
+                app:tint="#FFFFFF"
+                android:contentDescription="Save" />
         </LinearLayout>
     </RelativeLayout>
 
-    <!-- Menu Items -->
+
+    <!-- MENU CONTENT -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -87,8 +94,8 @@
                 android:gravity="center_vertical">
 
                 <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
                     android:src="@drawable/ic_language"
                     android:layout_marginEnd="16dp" />
 
@@ -112,8 +119,8 @@
                 android:gravity="center_vertical">
 
                 <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
                     android:src="@drawable/ic_category"
                     android:layout_marginEnd="16dp" />
 
@@ -137,8 +144,8 @@
                 android:gravity="center_vertical">
 
                 <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
                     android:src="@drawable/ic_bank"
                     android:layout_marginEnd="16dp" />
 
@@ -162,8 +169,8 @@
                 android:gravity="center_vertical">
 
                 <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
                     android:src="@drawable/ic_account"
                     android:layout_marginEnd="16dp" />
 
@@ -187,8 +194,8 @@
                 android:gravity="center_vertical">
 
                 <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
                     android:src="@drawable/ic_export"
                     android:layout_marginEnd="16dp" />
 
@@ -211,15 +218,15 @@
                 android:gravity="center_vertical">
 
                 <ImageView
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
                     android:src="@drawable/ic_alert"
                     android:layout_marginEnd="16dp" />
 
                 <TextView
                     android:layout_width="0dp"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:text="Đặt cảnh báo chi tiêu"
                     android:textSize="16sp"
                     android:textColor="#333333" />
@@ -242,4 +249,5 @@
                 android:layout_marginTop="32dp" />
         </LinearLayout>
     </ScrollView>
+
 </LinearLayout>
