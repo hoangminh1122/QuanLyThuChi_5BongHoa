@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -14,6 +15,7 @@ import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
+import com.google.android.material.button.MaterialButtonToggleGroup;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +27,7 @@ public class ThongKeActivity extends AppCompatActivity {
     private GiaoDichAdapter giaoDichAdapter;
     private List<GiaoDich> danhSachGiaoDich;
     private ImageView ivBack;
+    private MaterialButtonToggleGroup toggleButtonGroup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,16 +37,27 @@ public class ThongKeActivity extends AppCompatActivity {
         pieChart = findViewById(R.id.piechart);
         recyclerView = findViewById(R.id.recycler_view_giao_dich);
         ivBack = findViewById(R.id.iv_back);
+        toggleButtonGroup = findViewById(R.id.toggle_button_group);
 
         setupPieChart();
         setupRecyclerView();
 
-        ivBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
+        ivBack.setOnClickListener(v -> finish());
+
+        toggleButtonGroup.addOnButtonCheckedListener((group, checkedId, isChecked) -> {
+            if (isChecked) {
+                if (checkedId == R.id.btn_ngay) {
+                    updateDataFor("ngay");
+                } else if (checkedId == R.id.btn_thang) {
+                    updateDataFor("thang");
+                } else if (checkedId == R.id.btn_nam) {
+                    updateDataFor("nam");
+                }
             }
         });
+
+        // Set default selection
+        toggleButtonGroup.check(R.id.btn_thang);
     }
 
     private void setupPieChart() {
@@ -76,5 +90,11 @@ public class ThongKeActivity extends AppCompatActivity {
 
         giaoDichAdapter = new GiaoDichAdapter(this, danhSachGiaoDich);
         recyclerView.setAdapter(giaoDichAdapter);
+    }
+
+    private void updateDataFor(String filter) {
+        // In a real app, you would filter the data based on the selected period.
+        // For now, we'll just show a toast.
+        Toast.makeText(this, "Lọc theo: " + filter, Toast.LENGTH_SHORT).show();
     }
 }

@@ -9,7 +9,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#5DBED6"
+        android:background="@color/mau_chu_dao"
         android:padding="16dp">
 
         <ImageView
@@ -99,8 +99,8 @@
                 android:layout_height="wrap_content"
                 android:max="500"
                 android:progress="13"
-                android:progressTint="#5DBED6"
-                android:thumbTint="#5DBED6"
+                android:progressTint="@color/mau_chu_dao"
+                android:thumbTint="@color/mau_chu_dao"
                 android:layout_marginBottom="16dp" />
 
             <!-- Khung nhập và hiển thị số tiền -->

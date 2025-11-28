@@ -23,7 +23,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
+                android:layout_centerInParent="true"
                 android:text="GIAO DỊCH MỚI"
                 android:textColor="@color/white"
                 android:textSize="@dimen/font_size_xxlarge"
@@ -34,22 +34,23 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_centerVertical="true"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginEnd="16dp">
 
                 <ImageView
                     android:id="@+id/iv_cancel"
                     android:layout_width="@dimen/icon_size_small"
                     android:layout_height="@dimen/icon_size_small"
+                    android:layout_marginEnd="8dp"
                     android:src="@drawable/bieu_tuong_huy"
-                    app:tint="@color/white"
-                    android:layout_marginEnd="@dimen/spacing_large" />
+                    app:tint="@color/white" />
 
                 <ImageView
                     android:id="@+id/iv_reset"
                     android:layout_width="@dimen/icon_size_small"
                     android:layout_height="@dimen/icon_size_small"
                     android:src="@drawable/bieu_tuong_dat_lai"
-                    app:tint="@color/white"/>
+                    app:tint="@color/white" />
             </LinearLayout>
 
         </RelativeLayout>
@@ -94,11 +95,37 @@
                     android:layout_marginStart="@dimen/spacing_large"/>
             </RadioGroup>
 
-            <Spinner
-                android:id="@+id/spinner_the_loai"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/menu_the_loai"
+                style="@style/CustomExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/spacing_large"/>
+                android:layout_marginBottom="@dimen/spacing_large"
+                android:hint="Thể loại">
+
+                <AutoCompleteTextView
+                    android:id="@+id/auto_complete_the_loai"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_ten_the_loai_khac"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_large"
+                android:visibility="gone"
+                android:hint="Nhập tên thể loại khác">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_ten_the_loai_khac"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <EditText
                 android:id="@+id/edit_ten_giao_dich"
@@ -121,16 +148,31 @@
                 android:textSize="@dimen/font_size_large"
                 android:layout_marginBottom="@dimen/spacing_large"/>
 
-            <EditText
-                android:id="@+id/edit_ngay_giao_dich"
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Ngày giao dịch *"
-                android:focusable="false"
-                android:textColor="@color/mau_chu_toi"
-                android:textColorHint="@color/mau_chu_phu"
-                android:textSize="@dimen/font_size_large"
-                android:layout_marginBottom="@dimen/spacing_large"/>
+                android:layout_marginBottom="@dimen/spacing_large">
+
+                <EditText
+                    android:id="@+id/edit_ngay_giao_dich"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Ngày giao dịch *"
+                    android:paddingEnd="40dp"
+                    android:textColor="@color/mau_chu_toi"
+                    android:textColorHint="@color/mau_chu_phu"
+                    android:textSize="@dimen/font_size_large" />
+
+                <ImageView
+                    android:id="@+id/iv_calendar_picker"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:alpha="0.7"
+                    android:src="@drawable/ic_calendar" />
+
+            </RelativeLayout>
 
             <EditText
                 android:id="@+id/edit_ghi_chu"

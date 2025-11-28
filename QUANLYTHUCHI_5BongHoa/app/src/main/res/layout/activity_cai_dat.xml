@@ -10,7 +10,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#5DBED6"
+        android:background="@color/mau_chu_dao"
         android:padding="16dp">
 
         <ImageView
@@ -37,30 +37,18 @@
             android:layout_centerVertical="true"
             android:orientation="horizontal">
 
-            <TextView
+            <ImageView
                 android:id="@+id/btnDiscard"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_button_rounded"
-                android:backgroundTint="#B0B0B0"
-                android:padding="8dp"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:text="Discard"
-                android:textColor="#FFFFFF"
-                android:layout_marginEnd="8dp" />
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_close"
+                android:layout_marginEnd="16dp"/>
 
-            <TextView
+            <ImageView
                 android:id="@+id/btnSave"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_button_rounded"
-                android:backgroundTint="#4CAF50"
-                android:padding="8dp"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:text="Save"
-                android:textColor="#FFFFFF" />
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_save"/>
         </LinearLayout>
     </RelativeLayout>
 
