@@ -1,7 +1,6 @@
 package com.example.quanlythuchi_5bonghoa;
 
 import android.os.Bundle;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,7 +10,7 @@ import java.util.List;
 
 public class ThongBaoActivity extends AppCompatActivity {
 
-    private ImageView btnBack;   // FIXED: ImageView, not TextView
+    private TextView btnBack;
     private TextView tabTatCa, tabDaDoc, tabChuaDoc;
 
     private List<ThongBao> allNotifications;
@@ -56,7 +55,7 @@ public class ThongBaoActivity extends AppCompatActivity {
     private void selectTab(String tab) {
         currentTab = tab;
 
-        // Reset backgrounds
+        // Reset all tabs
         tabTatCa.setBackgroundResource(0);
         tabDaDoc.setBackgroundResource(0);
         tabChuaDoc.setBackgroundResource(0);
@@ -110,6 +109,9 @@ public class ThongBaoActivity extends AppCompatActivity {
     }
 
     private void filterNotifications(String filter) {
+        // TODO: Implement filtering logic based on read/unread status
+        // This would typically update a RecyclerView with filtered data
+
         List<ThongBao> filteredList = new ArrayList<>();
 
         switch (filter) {
@@ -132,10 +134,11 @@ public class ThongBaoActivity extends AppCompatActivity {
                 break;
         }
 
-        // TODO: update RecyclerView when implemented
+        // Update RecyclerView here
+        // adapter.updateData(filteredList);
     }
 
-    // Notification model
+    // Inner class for Notification data
     public static class ThongBao {
         private String noiDung;
         private String thoiGian;

@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="260dp"
         android:layout_marginTop="-20dp"
-        app:cardBackgroundColor="@color/mau_chu_dao"
+        app:cardBackgroundColor="#5DBED6"
         app:cardCornerRadius="0dp"
         app:cardElevation="0dp"
         app:shapeAppearanceOverlay="@style/ShapeAppearance.MaterialComponents.MediumComponent">

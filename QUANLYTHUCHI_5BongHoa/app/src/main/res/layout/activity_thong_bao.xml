@@ -9,7 +9,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/mau_chu_dao"
+        android:background="#5DBED6"
         android:padding="16dp">
 
         <ImageView
@@ -35,7 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="@color/mau_chu_dao"
+        android:background="#5DBED6"
         android:paddingBottom="8dp">
 
         <TextView
@@ -213,6 +213,7 @@
                     android:textColor="#999999"
                     android:layout_marginTop="4dp" />
             </LinearLayout>
+s
             <!-- Thong bao 5 -->
             <LinearLayout
                 android:layout_width="match_parent"

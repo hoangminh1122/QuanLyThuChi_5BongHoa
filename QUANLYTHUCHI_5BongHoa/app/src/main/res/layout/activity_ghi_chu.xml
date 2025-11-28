@@ -9,7 +9,7 @@
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/mau_chu_dao"
+        android:background="#5DBED6"
         android:padding="16dp">
 
         <ImageView
